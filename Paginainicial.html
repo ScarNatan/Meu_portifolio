@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio Natan-dev</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+
+    <nav class="Navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">sobre</a>
+            </li>
+            <li>
+                <a href="#Projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#Contato" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="Inicio" class="cabeçario">
+
+        <img src="perfil.jpeg" alt="Foto de Natan-dev" class="foto-perfil">
+        <h1 class="h1">Natan Evangelista</h1>
+        <p class="cabeçario-sub-titulo">Estudante Desenvolvimento de sistemas</p>
+
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e sempre em busca
+                de novos desafios. Atualmente, estou aprimorando minhas habilidades em desenvolvimento e construção de
+                soluções inovadoras
+            </p>
+        </div>
+    </section>
+
+    <section id="Projetos" class="Projetos">
+        <h2 class="Projetos-titulo">Projetos</h2>
+        <div class="Projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="Genius Hub img.jpg" alt="Projeto 1" class="Projeto-imagem">
+                <div class="caixa-texto-projetos">
+                    <h3 class="info-projetos">Plataforma Crowdsourcing</h3>
+                    <p class="paragrafo-projetos"> Nova Plataforma Crowdsourcing criada por: Natan(eu) caio gabriel,
+                        Santana
+                        e Vitor. Ela possui o
+                        intuito de ajudo alunos e empresas a se conectarem de uma forma inovadora</p>
+                </div>
+            </div>
+
+    </section>
+
+    <section id="Contato" class="Contatos">
+        <h2 class="Contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="EnviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form"> Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+        function EnviarWhats(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '551196950-4334'
+
+            const texto = 'Olá! Me chamo ${nome}, ${mensagem}'
+            const msgformatada = encodeURIComponent(texto)
+
+            const url = 'https://wa.me/${telefone}/?text=${msgformatada}'
+
+            window.open(url, '_blank')
+       
+        }   
+            </script>
+    
+</body>
+
+
+</html>
