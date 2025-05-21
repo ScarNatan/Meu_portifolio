@@ -40,13 +40,32 @@ body {
     gap: 3rem;
 }
 
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+        background-color: var(--maisEscuro);
+        padding: 2rem;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .menu-link {
+        font-size: 1.2rem;
+    }
+}
+
 .menu-link {
     text-decoration: none;
     color: #e2e8f0;
     font-weight: 500;
     position: relative;
     padding: 0.5rem;
+    transition: color 0.3s ease;
 }
+
 
 .menu-link::after {
 
@@ -257,4 +276,53 @@ body {
     }
 
 
+}
+.botao-curriculo {
+    display: inline-block;
+    background-color: var(--primaria);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.botao-curriculo:hover {
+    background-color: var(--secundaria);
+}
+
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--Claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+    margin-bottom: 1.5rem; /* Adiciona espaço entre os campos */
+}
+
+.campo-email {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--Claro);
+    border: 1px solid var(--vidro);
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem; /* Adiciona espaço abaixo do campo "e-mail" */
+}
+
+.campo-email:focus {
+    border-color: var(--secundaria);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+}
+
+.campo-email::placeholder {
+    color: var(--Claro);
+    opacity: 0.7;
 }
